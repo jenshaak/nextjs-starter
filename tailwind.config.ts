@@ -15,6 +15,33 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
-};
-export default config;
+  daisyui: {
+    themes: [
+      "light",
+      {
+        dark: {
+          ...require("daisyui/src/theming/themes")["dark"],
+          primary: "#e31d4c",
+          secondary: "teal",
+          neutral: "#f5f5f5",
+        },
+      },
+      {
+        mytheme: {
+          "primary": "#ff00ff",
+          "secondary": "#34d399",
+          "accent": "#00ffff",
+          "neutral": "#ff00ff",
+          "base-100": "#ff00ff",
+          "info": "#0000ff",
+          "success": "#00ff00",
+          "warning": "#00ff00",
+          "error": "#ff0000",
+        },
+      },
+    ],
+  },
+  plugins: [require("tailwindcss-animate"), require("daisyui")],
+} satisfies Config
+
+export default config
